@@ -249,7 +249,7 @@ final class CustomersModuleTest extends TestCase
         // still passes while the route returns [] forever in production.
         self::assertTrue(
             interface_exists(MultiCompanyContext::class),
-            'MultiCompanyContext missing — the vendored contract is stale, so /me/companies '
+            'MultiCompanyContext missing, the vendored contract is stale, so /me/companies '
             . 'would silently return [] for everyone. Run composer update for the contract.',
         );
     }

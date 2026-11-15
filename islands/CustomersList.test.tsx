@@ -304,7 +304,7 @@ describe("editing a customer", () => {
     });
   });
 
-  it("PATCHES the row it opened — it never creates a duplicate", async () => {
+  it("PATCHES the row it opened, it never creates a duplicate", async () => {
     // A POST here would split one customer's invoices, portal access and
     // tickets across two directory ids.
     const u = await open([ACME]);
@@ -490,7 +490,7 @@ describe("when the API cannot be reached", () => {
   it("says so instead of loading forever", async () => {
     unreachable();
     render(<CustomersList />);
-    expect(await screen.findByText("Firmen konnten nicht geladen werden — die API ist nicht erreichbar.")).toBeTruthy();
+    expect(await screen.findByText("Firmen konnten nicht geladen werden, die API ist nicht erreichbar.")).toBeTruthy();
     expect(screen.queryByLabelText("Wird geladen")).toBeNull();
   });
 

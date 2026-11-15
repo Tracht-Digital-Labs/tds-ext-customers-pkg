@@ -29,6 +29,7 @@ composer install && composer test   # phpunit: RBAC + validation (DB-free)
 - Call the API with `apiFetch`, never a relative `fetch`. Never mount a `ToastHost`.
 - Every route change updates `php/docs/api.php`. Migration classes are prefixed `Customers`.
 - Stay in the `0.1.x` line. Versions move via the release workflow only.
+- Follows the TDS quality standard (`../tds-ops/standards/quality.md`): no AI slop, clean code.
 
 ## Topic files
 

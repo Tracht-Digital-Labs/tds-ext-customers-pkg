@@ -54,7 +54,7 @@ $canonical = [
         'pattern' => '/admin/companies',
         'summary' => 'Schlanke `{id, name}`-Liste für Mitgliedschafts-Auswahlen',
         'description' => 'Die Firmenliste, die der Benutzer-Editor der Basis beim Bearbeiten '
-            . 'von Mitgliedschaften lädt. **Admin-only, nicht `companies:read`** — wer '
+            . 'von Mitgliedschaften lädt. **Admin-only, nicht `companies:read`**, wer '
             . 'Mitgliedschaften vergibt, ist ohnehin Admin, und die Liste soll nicht '
             . 'über den Umweg eines Leserechts an jeden Portalnutzer fallen. Die Antwort '
             . 'trägt den Schlüssel `companies` **und** `customers`, solange die alte '
@@ -127,7 +127,7 @@ $canonical = [
         'method' => 'DELETE',
         'pattern' => '/companies/{id:[0-9]+}',
         'summary' => 'Firma löschen',
-        'description' => 'Meldet auch dann Erfolg, wenn die Id nicht existierte — löschen '
+        'description' => 'Meldet auch dann Erfolg, wenn die Id nicht existierte, löschen '
             . 'ist idempotent.',
         'permission' => 'companies:write',
         'params' => $idParam,
@@ -154,7 +154,7 @@ $aliases = array_map(
         $entry['summary'] = '(veraltet) ' . $entry['summary'];
         $entry['description'] = 'Alter Pfad aus der Zeit vor der Umbenennung '
             . '`customer` → `company`. Identisch zur `/companies…`-Route und '
-            . '**wird im Folge-Release entfernt** — neue Aufrufer nutzen den '
+            . '**wird im Folge-Release entfernt**, neue Aufrufer nutzen den '
             . 'neuen Pfad. '
             . ($entry['description'] ?? '');
 
@@ -169,11 +169,11 @@ return array_merge($canonical, $aliases, [
         'pattern' => '/me/companies',
         'summary' => 'Die eigenen Firmen des angemeldeten Benutzers',
         'description' => 'Liefert `{id, name, active}` für **genau die** Firmen, deren '
-            . 'Mitgliedschaft im verifizierten Token steht — die Quelle für den Firmennamen '
+            . 'Mitgliedschaft im verifizierten Token steht, die Quelle für den Firmennamen '
             . 'im Profilmenü der Shell. Nötig, weil `GET /admin/companies` bewusst admin-only '
             . 'ist: ein Portalnutzer könnte sonst nicht einmal den Namen seiner eigenen Firma '
             . 'auflösen und das Menü müsste „Firma #7" anzeigen. Kein Rechte-Gate über die '
-            . 'Anmeldung hinaus — der Name der eigenen Firma ist kein `companies:read`-Stoff, '
+            . 'Anmeldung hinaus, der Name der eigenen Firma ist kein `companies:read`-Stoff, '
             . 'und ein solches Gate hieße, dass jeder Portalnutzer das Verzeichnis-Leserecht '
             . 'braucht, nur um eine Kopfzeile zu sehen. **Ein Admin bekommt eine leere Liste**: '
             . 'seine Reichweite ist „jede Firma", was nicht dasselbe ist wie einer anzugehören.',
