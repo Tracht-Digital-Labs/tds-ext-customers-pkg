@@ -1,4 +1,4 @@
-import { defineExtension } from "@tracht-digital-solutions/tds-frontend-contract";
+import { defineExtension } from "@tracht-digital-labs/tds-frontend-contract";
 
 /**
  * Customer/company directory manifest — the panel's canonical customer list,
@@ -31,7 +31,7 @@ export default defineExtension({
     {
       id: "customers-count",
       title: "Firmen",
-      island: "@tracht-digital-solutions/tds-ext-customers/widgets/Widget.astro",
+      island: "@tracht-digital-labs/tds-ext-customers/widgets/Widget.astro",
       size: "sm",
       permission: "companies:read",
       dataEndpoint: "/companies/summary",
@@ -41,7 +41,7 @@ export default defineExtension({
   routes: [
     {
       pattern: "/firmen",
-      entrypoint: "@tracht-digital-solutions/tds-ext-customers/pages/Index.astro",
+      entrypoint: "@tracht-digital-labs/tds-ext-customers/pages/Index.astro",
       permission: "companies:read",
     },
   ],
